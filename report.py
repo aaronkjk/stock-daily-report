@@ -23,10 +23,14 @@ from kakao import send_kakao_memo
 
 # 보유 종목: 티커 -> (수량, 평균단가 USD).  평단 0 이면 P&L 계산 생략
 HOLDINGS = {
-    "CBRS": {"shares": 44,   "avg": 229.00},
-    "ORCL": {"shares": 71,   "avg": 186.37},
-    "GNTA": {"shares": 2840, "avg": 2.24},
+    "SPCX": {"shares": 49,   "avg": 154.71},
+    "CBRS": {"shares": 57,   "avg": 219.2135},
+    "GNTA": {"shares": 4266, "avg": 2.1362},
+    "ORCL": {"shares": 71,   "avg": 186.3747},
     "RDW":  {"shares": 399,  "avg": 20.34},
+    "SNDK": {"shares": 2,    "avg": 2073.90},
+    "INTC": {"shares": 51,   "avg": 128.71},
+    "HPE":  {"shares": 147,  "avg": 50.99},
 }
 
 # 매크로 지표: 표시이름 -> yfinance 티커
