@@ -37,4 +37,5 @@ jobs:
           git config user.email "actions@github.com"
           git add docs/index.html
           git commit -m "report: $(date -u +%Y-%m-%d)" || echo "no changes"
+          git pull --rebase origin main
           git push
