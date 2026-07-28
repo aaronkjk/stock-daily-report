@@ -1,0 +1,961 @@
+<meta charset="utf-8" />
+<title>HYPERTROPHY 3-DAY · 팔 · 허벅지 집중</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="허리디스크 안전 설계 · 덤벨/머신 위주 주3회 근비대 루틴. 팔·허벅지 두께 우선." />
+
+<link rel="manifest" href="./manifest.webmanifest" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F8F8" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171B1C" />
+
+<!-- 홈 화면 앱 (iOS) -->
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="근비대 3분할" />
+<link rel="apple-touch-icon" href="./icon-180.png" />
+<link rel="icon" href="./icon-192.png" />
+
+<style>
+/* ── tokens ─────────────────────────────────────────────────────── */
+:root {
+  color-scheme: light;
+  --bg:        #E7EAEA;
+  --surface:   #F6F8F8;
+  --surface-2: #EDF0F0;
+  --line:      #CFD6D6;
+  --line-soft: #DEE4E4;
+  --ink:       #14191A;
+  --ink-2:     #3C4749;
+  --muted:     #667375;
+  --acc:       #A87A05;   /* 15kg yellow, darkened for contrast on light */
+  --acc-ink:   #FFFFFF;
+  --acc-soft:  #F5E7BE;
+  --d1:        #B23425;   /* 25kg red   */
+  --d2:        #23527F;   /* 20kg blue  */
+  --d3:        #2F6B43;   /* 10kg green */
+  --warn:      #A2413C;
+  --warn-soft: #F6E2E0;
+  --done:      #2F6B43;
+  --shadow:    0 1px 2px rgba(20,25,26,.07), 0 6px 20px -12px rgba(20,25,26,.35);
+
+  --f-sans: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo",
+            "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --f-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, "Roboto Mono",
+            "D2Coding", monospace;
+
+  --pad: clamp(14px, 4vw, 22px);
+  --radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg:        #0E1112;
+    --surface:   #171B1C;
+    --surface-2: #1F2426;
+    --line:      #2C3335;
+    --line-soft: #232A2B;
+    --ink:       #E7EDEC;
+    --ink-2:     #BCC7C7;
+    --muted:     #838F91;
+    --acc:       #F0BC3E;
+    --acc-ink:   #17130A;
+    --acc-soft:  #3A2F12;
+    --d1:        #E0655A;
+    --d2:        #6098D6;
+    --d3:        #6BB584;
+    --warn:      #E28D87;
+    --warn-soft: #33201F;
+    --done:      #6BB584;
+    --shadow:    0 1px 2px rgba(0,0,0,.5), 0 8px 24px -14px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg:#E7EAEA; --surface:#F6F8F8; --surface-2:#EDF0F0; --line:#CFD6D6; --line-soft:#DEE4E4;
+  --ink:#14191A; --ink-2:#3C4749; --muted:#667375;
+  --acc:#A87A05; --acc-ink:#FFFFFF; --acc-soft:#F5E7BE;
+  --d1:#B23425; --d2:#23527F; --d3:#2F6B43;
+  --warn:#A2413C; --warn-soft:#F6E2E0; --done:#2F6B43;
+  --shadow: 0 1px 2px rgba(20,25,26,.07), 0 6px 20px -12px rgba(20,25,26,.35);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:#0E1112; --surface:#171B1C; --surface-2:#1F2426; --line:#2C3335; --line-soft:#232A2B;
+  --ink:#E7EDEC; --ink-2:#BCC7C7; --muted:#838F91;
+  --acc:#F0BC3E; --acc-ink:#17130A; --acc-soft:#3A2F12;
+  --d1:#E0655A; --d2:#6098D6; --d3:#6BB584;
+  --warn:#E28D87; --warn-soft:#33201F; --done:#6BB584;
+  --shadow: 0 1px 2px rgba(0,0,0,.5), 0 8px 24px -14px rgba(0,0,0,.9);
+}
+
+/* ── base ───────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; border: none; background: none; }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; border-radius: 6px; }
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 var(--pad); }
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+
+/* ── masthead ───────────────────────────────────────────────────── */
+header.mast {
+  padding: calc(env(safe-area-inset-top) + 20px) 0 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.mast-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.mast h1 {
+  margin: 4px 0 0;
+  font-size: clamp(23px, 6.4vw, 31px);
+  font-weight: 800;
+  letter-spacing: -.028em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+.mast h1 em { font-style: normal; color: var(--acc); }
+.mast p { margin: 8px 0 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+.theme-btn {
+  flex: none; width: 38px; height: 38px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface-2);
+  display: grid; place-items: center; font-size: 15px; color: var(--ink-2);
+}
+
+/* ── tabs ───────────────────────────────────────────────────────── */
+nav.tabs {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: saturate(1.6) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.tabs-inner { display: flex; gap: 6px; padding: 8px 0; overflow-x: auto; scrollbar-width: none; }
+.tabs-inner::-webkit-scrollbar { display: none; }
+.tab {
+  flex: none; display: flex; flex-direction: column; gap: 1px;
+  padding: 7px 13px; border-radius: 9px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--muted); text-align: left;
+  transition: background .14s, color .14s, border-color .14s;
+}
+.tab b { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; font-weight: 700; }
+.tab span { font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.tab[aria-selected="true"] { color: var(--ink); border-color: currentColor; }
+.tab[data-day="1"][aria-selected="true"] { background: color-mix(in srgb, var(--d1) 15%, var(--surface)); border-color: var(--d1); }
+.tab[data-day="2"][aria-selected="true"] { background: color-mix(in srgb, var(--d2) 15%, var(--surface)); border-color: var(--d2); }
+.tab[data-day="3"][aria-selected="true"] { background: color-mix(in srgb, var(--d3) 15%, var(--surface)); border-color: var(--d3); }
+.tab[data-day="g"][aria-selected="true"] { background: var(--acc-soft); border-color: var(--acc); }
+
+/* ── day panel ──────────────────────────────────────────────────── */
+main { padding-bottom: 200px; }
+.panel { display: none; padding-top: 18px; }
+.panel.on { display: block; animation: fade .22s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .panel.on { animation: none; } * { transition: none !important; } }
+
+.day-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+.day-head h2 { margin: 0; font-size: 20px; font-weight: 800; letter-spacing: -.02em; }
+.day-focus { font-size: 13px; color: var(--muted); }
+.day-meta {
+  display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0 18px;
+}
+.chip {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .04em;
+  padding: 4px 9px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface-2); color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.chip.accent { background: var(--acc-soft); border-color: color-mix(in srgb, var(--acc) 45%, transparent); color: var(--ink); }
+
+/* ── exercise card ──────────────────────────────────────────────── */
+.card {
+  background: var(--surface); border: 1px solid var(--line-soft);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  margin-bottom: 12px; overflow: hidden;
+  border-left: 3px solid var(--rail, var(--line));
+}
+.card.opt { opacity: .82; border-left-style: dashed; }
+.card-top { display: flex; gap: 11px; padding: 13px 14px 11px; align-items: flex-start; }
+.idx {
+  flex: none; width: 25px; height: 25px; border-radius: 7px; margin-top: 1px;
+  display: grid; place-items: center;
+  background: var(--surface-2); border: 1px solid var(--line);
+  font-family: var(--f-mono); font-size: 12px; font-weight: 700; color: var(--ink-2);
+}
+.card-title { flex: 1; min-width: 0; }
+.card-title h3 { margin: 0; font-size: 16px; font-weight: 700; letter-spacing: -.015em; line-height: 1.3; }
+.card-title .en { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .06em; color: var(--muted); text-transform: uppercase; display: block; margin-top: 2px; }
+.tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; }
+.tag {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
+  padding: 2.5px 7px; border-radius: 5px; background: var(--surface-2);
+  border: 1px solid var(--line); color: var(--muted);
+}
+.tag.pri { background: var(--acc-soft); border-color: color-mix(in srgb, var(--acc) 50%, transparent); color: var(--ink); font-weight: 700; }
+.tag.opt { border-style: dashed; }
+
+.spec {
+  flex: none; text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums;
+}
+.spec .rr { font-size: 15px; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; }
+.spec .rest { font-size: 10.5px; color: var(--muted); letter-spacing: .04em; margin-top: 2px; white-space: nowrap; }
+
+/* set rows */
+.sets { padding: 0 14px 4px; display: flex; flex-direction: column; gap: 6px; }
+.setrow {
+  display: grid; grid-template-columns: 42px 1fr 1fr 42px; gap: 7px; align-items: center;
+}
+.setrow .lab {
+  font-family: var(--f-mono); font-size: 10.5px; color: var(--muted);
+  letter-spacing: .05em; white-space: nowrap;
+}
+.fld { position: relative; }
+.fld input {
+  width: 100%; padding: 8px 26px 8px 9px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--surface-2);
+  font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: 14.5px;
+  text-align: left; min-width: 0;
+}
+.fld input::placeholder { color: color-mix(in srgb, var(--muted) 70%, transparent); }
+.fld .u {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  font-family: var(--f-mono); font-size: 10.5px; color: var(--muted); pointer-events: none;
+}
+.chk {
+  height: 34px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--muted);
+  display: grid; place-items: center; font-size: 14px; font-weight: 700;
+  transition: background .14s, color .14s, border-color .14s;
+}
+.chk[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--done) 20%, var(--surface));
+  border-color: var(--done); color: var(--done);
+}
+.setrow.is-done .fld input { border-color: color-mix(in srgb, var(--done) 35%, var(--line)); }
+
+.note {
+  margin: 8px 14px 13px; padding: 9px 11px; border-radius: 9px;
+  background: var(--surface-2); border: 1px solid var(--line-soft);
+  font-size: 13px; line-height: 1.55; color: var(--ink-2);
+}
+.note b { color: var(--ink); font-weight: 700; }
+.note.safety { background: var(--warn-soft); border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+.note.safety .k { color: var(--warn); font-weight: 700; }
+.note + .note { margin-top: -5px; }
+.note .k {
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); display: block; margin-bottom: 3px; font-weight: 700;
+}
+
+.day-actions { display: flex; gap: 8px; margin: 16px 0 8px; }
+.btn-ghost {
+  flex: 1; padding: 11px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink-2); font-size: 13.5px; font-weight: 600;
+}
+.btn-ghost:active { background: var(--surface-2); }
+
+/* ── guide ──────────────────────────────────────────────────────── */
+.gsec { margin-bottom: 26px; }
+.gsec h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 800; letter-spacing: -.01em;
+  padding-bottom: 7px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: baseline; gap: 8px;
+}
+.gsec h3 .n { font-family: var(--f-mono); font-size: 11px; color: var(--acc); letter-spacing: .1em; }
+.gsec p { margin: 0 0 10px; font-size: 14px; line-height: 1.65; color: var(--ink-2); }
+.gsec ul { margin: 0 0 10px; padding-left: 18px; font-size: 14px; line-height: 1.65; color: var(--ink-2); }
+.gsec li { margin-bottom: 6px; }
+.gsec li b, .gsec p b { color: var(--ink); font-weight: 700; }
+.scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 13px; }
+th, td { padding: 9px 11px; text-align: left; border-bottom: 1px solid var(--line-soft); white-space: nowrap; }
+th { font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+td.n { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: none; }
+td .bar { display: inline-block; height: 7px; border-radius: 4px; background: var(--acc); vertical-align: middle; margin-left: 7px; }
+.ref { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 7px; padding-left: 15px; text-indent: -15px; }
+.ref b { color: var(--ink-2); font-weight: 600; }
+
+/* ── timer dock ─────────────────────────────────────────────────── */
+.dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  backdrop-filter: saturate(1.6) blur(14px);
+  border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -8px 28px -20px rgba(0,0,0,.6);
+}
+.dock-prog { height: 3px; background: var(--line-soft); }
+.dock-prog i { display: block; height: 100%; width: 0%; background: var(--acc); transition: width .25s linear; }
+.dock-prog.warn i { background: var(--warn); }
+.dock-inner { display: flex; align-items: center; gap: 11px; padding: 10px 0 12px; }
+.t-left { flex: none; min-width: 118px; }
+.t-mode {
+  display: block; font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: -2px;
+}
+.t-mode:active { color: var(--acc); }
+.t-time {
+  font-family: var(--f-mono); font-variant-numeric: tabular-nums;
+  font-size: 34px; font-weight: 700; letter-spacing: -.035em; line-height: 1.1;
+}
+.t-time.warn { color: var(--warn); }
+.t-time.zero { color: var(--acc); }
+.t-ctrl { display: flex; gap: 6px; flex: 1; justify-content: flex-end; flex-wrap: nowrap; }
+.tb {
+  min-width: 46px; height: 44px; padding: 0 11px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface-2); color: var(--ink-2);
+  font-family: var(--f-mono); font-size: 12.5px; font-weight: 700;
+  display: grid; place-items: center;
+}
+.tb:active { background: var(--line-soft); }
+.tb.play { background: var(--acc); border-color: var(--acc); color: var(--acc-ink); min-width: 62px; font-size: 15px; }
+.presets { display: flex; gap: 6px; padding: 0 0 11px; overflow-x: auto; scrollbar-width: none; }
+.presets::-webkit-scrollbar { display: none; }
+.pb {
+  flex: none; padding: 6px 12px; border-radius: 999px; font-family: var(--f-mono);
+  font-size: 11.5px; font-weight: 600; letter-spacing: .04em;
+  border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+}
+.pb[data-on="1"] { border-color: var(--acc); color: var(--ink); background: var(--acc-soft); }
+.pb.lock { margin-left: auto; }
+.pb.lock[data-on="1"] { border-color: var(--done); background: color-mix(in srgb, var(--done) 18%, var(--surface)); }
+
+footer.foot { padding: 22px 0 12px; color: var(--muted); font-size: 11.5px; line-height: 1.6; border-top: 1px solid var(--line); margin-top: 26px; }
+
+/* ── 홈 화면 앱으로 실행됐을 때 ─────────────────────────────────── */
+html { -webkit-text-size-adjust: 100%; }
+body { overscroll-behavior-y: contain; }            /* 당겨서 새로고침 차단 */
+button, .tab, .chip, .idx, .spec { touch-action: manipulation; }
+button, .tab, .eyebrow, .day-head, .spec, th {
+  -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+}
+input { -webkit-user-select: text; user-select: text; }
+
+/* standalone 모드에서는 하단 홈 인디케이터만큼 여백을 더 준다 */
+@media (display-mode: standalone) {
+  main { padding-bottom: 216px; }
+  .dock-inner { padding-bottom: 14px; }
+}
+
+/* 새 버전 알림 */
+.update {
+  position: fixed; left: 50%; transform: translateX(-50%) translateY(-120%);
+  top: calc(env(safe-area-inset-top) + 10px); z-index: 90;
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px 9px 14px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--acc);
+  box-shadow: var(--shadow); font-size: 13px; font-weight: 600;
+  transition: transform .3s cubic-bezier(.2,.9,.3,1);
+  max-width: calc(100vw - 28px);
+}
+.update.on { transform: translateX(-50%) translateY(0); }
+.update button {
+  flex: none; padding: 5px 11px; border-radius: 999px;
+  background: var(--acc); color: var(--acc-ink); font-size: 12.5px; font-weight: 700;
+}
+</style>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-row">
+      <div>
+        <span class="eyebrow">Apartment gym · 3 days / week</span>
+        <h1>덤벨 &amp; 머신 <em>근비대</em><br />3분할 프로그램</h1>
+      </div>
+      <button class="theme-btn" id="themeBtn" aria-label="라이트/다크 전환">◑</button>
+    </div>
+    <p>허리디스크 안전 설계 · 스쿼트/데드리프트 없음 · 케이블 최소화 · <b>팔 두께 &amp; 허벅지 두께</b> 우선</p>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <div class="tabs-inner" role="tablist" id="tabs"></div>
+  </div>
+</nav>
+
+<main class="wrap" id="panels"></main>
+
+<div class="dock">
+  <div class="dock-prog" id="prog"><i></i></div>
+  <div class="wrap">
+    <div class="dock-inner">
+      <div class="t-left">
+        <button class="t-mode" id="modeBtn" title="탭하면 스톱워치로 전환">Rest timer ⇄</button>
+        <div class="t-time num" id="time">2:00</div>
+      </div>
+      <div class="t-ctrl">
+        <button class="tb" id="minus">−15</button>
+        <button class="tb play" id="play">▶</button>
+        <button class="tb" id="plus">+15</button>
+        <button class="tb" id="reset">↺</button>
+      </div>
+    </div>
+    <div class="presets" id="presets">
+      <button class="pb" data-sec="60">1:00</button>
+      <button class="pb" data-sec="75">1:15</button>
+      <button class="pb" data-sec="90">1:30</button>
+      <button class="pb" data-sec="120">2:00</button>
+      <button class="pb" data-sec="150">2:30</button>
+      <button class="pb" data-sec="180">3:00</button>
+      <button class="pb lock" id="wakeBtn" data-on="0">☀ 화면 켜둠</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══ 프로그램 데이터 ══════════════════════════════════════════════ */
+const P = [
+  {
+    id: "1", color: "var(--d1)", label: "DAY 1", name: "하체 (대퇴사두 중심) + 이두",
+    focus: "허벅지 앞 + 팔 앞", when: "월요일 권장",
+    ex: [
+      { n:"레그 프레스", en:"Leg Press", pri:true, sets:4, reps:"8–12", rest:180,
+        note:"발은 플랫폼 <b>가운데~살짝 아래</b>, 어깨너비. 사두에 집중되는 위치다. 무릎을 가슴 쪽으로 최대한 내리되 <b>골반이 시트에서 뜨기 직전까지만</b> 내린다.",
+        safe:"허리 핵심: 등·엉덩이를 등받이에서 절대 떼지 않는다. 골반이 말리면(butt wink) 요추 굴곡+압박이 동시에 걸려 디스크에 가장 나쁜 조합이 된다. 가동범위는 '골반이 뜨지 않는 최대'가 내 정답이다." },
+      { n:"덤벨 불가리안 스플릿 스쿼트", en:"DB Bulgarian Split Squat", pri:true, sets:3, reps:"10–12 / 다리", rest:120,
+        note:"덤벨을 <b>양손에 들고</b> 몸통은 살짝 앞으로. 한 다리씩 하면 총 척추 부하가 바벨 스쿼트의 절반 이하다. 앞발을 멀리 두면 사두 대신 둔근으로 넘어가니 <b>앞발은 가깝게</b>.",
+        safe:"중심이 흔들리면 허리로 버티게 된다. 한 손은 기둥/랙을 잡고 균형을 잡아도 효과 차이는 거의 없다." },
+      { n:"레그 익스텐션", en:"Leg Extension", pri:true, sets:3, reps:"12–15", rest:90,
+        note:"사두를 <b>스트레치 구간</b>까지 확실히 내렸다가 올린다. 맨 위에서 1초 정지. 마지막 세트는 실패 후 무게를 30% 줄여 <b>드롭세트</b> 한 번.",
+        safe:"등받이를 세워 앉아 허리가 뜨지 않게 한다. 무릎 통증이 있으면 시작 각도를 조금 좁힌다." },
+      { n:"시티드 레그 컬", en:"Seated Leg Curl", sets:3, reps:"10–12", rest:90,
+        note:"눕는 레그컬보다 <b>앉은 자세</b>를 쓴다. 고관절이 굽어 햄스트링이 길어진 상태에서 수축하는데, 이 자세가 근비대에 더 유리하다는 결과가 있다(Maeo 2021).",
+        safe:"라잉 레그컬은 엎드릴 때 허리가 젖혀지므로 디스크에 불리하다. 시티드가 안전상으로도 낫다." },
+      { n:"시티드 카프 레이즈", en:"Seated Calf Raise", sets:3, reps:"12–15", rest:60,
+        note:"맨 아래에서 <b>2초 스트레치</b>, 맨 위에서 1초. 종아리는 스트레치 구간에서 자극이 결정된다." },
+      { n:"인클라인 덤벨 컬", en:"Incline DB Curl", pri:true, sets:4, reps:"8–12", rest:90,
+        note:"벤치 <b>45~60도</b>, 팔을 몸 뒤로 늘어뜨린 상태에서 시작. 이두 <b>장두가 최대로 늘어난</b> 상태에서 훈련하는 종목이라 팔 앞쪽 볼륨에 가장 효율적이다. 내릴 때 3초.",
+        safe:"등받이에 등을 붙이고 반동 금지. 서서 하는 반동 컬은 허리 신전 부하가 크다." },
+      { n:"덤벨 해머 컬", en:"DB Hammer Curl", pri:true, sets:3, reps:"10–15", rest:75,
+        note:"<b>팔 두께의 핵심은 상완근(brachialis)</b>이다. 이두 아래에 깔려 있어 커지면 이두를 밀어올려 팔 둘레가 실질적으로 늘어난다. 중립 그립 유지, 손목 꺾지 않기." },
+      { n:"오버헤드 덤벨 트라이셉스 익스텐션", en:"Overhead DB Extension", pri:true, sets:3, reps:"10–12", rest:90,
+        note:"덤벨 하나를 양손으로 잡고 <b>머리 뒤 깊게</b>. 팔을 머리 위로 든 자세가 푸시다운보다 삼두 장두 성장에 유의하게 유리하다(Maeo 2023). 삼두는 팔 부피의 약 2/3다.",
+        safe:"반드시 <b>등받이 있는 벤치에 앉아서</b>. 서서 하면 허리가 젖혀진다." }
+    ]
+  },
+  {
+    id: "2", color: "var(--d2)", label: "DAY 2", name: "상체 전체 + 삼두",
+    focus: "가슴·등·어깨 + 팔 뒤", when: "수요일 권장",
+    ex: [
+      { n:"인클라인 덤벨 프레스", en:"Incline DB Press", sets:4, reps:"8–12", rest:150,
+        note:"벤치 <b>30도</b>. 덤벨이 바벨보다 가동범위가 넓고 어깨가 편하다. 아래에서 가슴이 늘어나는 느낌까지 내린다.",
+        safe:"허리를 과하게 아치로 만들지 않는다. 발은 바닥에 평평하게, 다리를 벤치 위로 올리는 변형은 쓰지 않는다." },
+      { n:"체스트 서포티드 머신 로우", en:"Chest-Supported Machine Row", pri:true, sets:4, reps:"8–12", rest:150,
+        note:"가슴 패드에 <b>상체를 완전히 기대고</b> 당긴다. 견갑을 먼저 모으고 팔꿈치를 뒤로.",
+        safe:"이 종목이 벤트오버 바벨 로우를 대체한다. 상체를 지지하면 척추기립근이 몸통을 버틸 필요가 없어져 디스크에 걸리는 전단·압박력이 크게 줄어든다. 디스크가 있으면 상체를 숙여 버티는 모든 로우는 피한다." },
+      { n:"어시스트 풀업 (또는 머신 풀다운)", en:"Assisted Pull-up", sets:3, reps:"8–12", rest:120,
+        note:"어깨너비보다 약간 넓게. 매달린 상태에서 <b>완전히 늘어났다가</b> 가슴 위쪽까지. 등 너비 + 이두에도 좋은 자극이 간다.",
+        safe:"기구가 없으면 랫 풀다운으로 대체(케이블이지만 수직 당기기 대체재가 마땅치 않다). 다리로 반동 주지 않기." },
+      { n:"시티드 덤벨 숄더 프레스", en:"Seated DB Shoulder Press", sets:3, reps:"8–12", rest:120,
+        note:"등받이를 <b>85도 정도</b> 세우고 앉는다. 팔꿈치를 살짝 앞쪽으로 두면 어깨가 편하다.",
+        safe:"서서 하는 오버헤드 프레스는 요추 신전 부하가 커서 제외했다. 반드시 앉아서." },
+      { n:"덤벨 래터럴 레이즈", en:"DB Lateral Raise", sets:3, reps:"12–20", rest:60,
+        note:"가벼운 무게로 <b>반동 없이</b>. 어깨 측면이 커지면 팔이 상대적으로 더 굵어 보이는 효과도 있다. 마지막 세트는 반만 올리는 파샬로 5회 추가." },
+      { n:"덤벨 스컬 크러셔", en:"DB Skull Crusher", pri:true, sets:4, reps:"8–12", rest:90,
+        note:"벤치에 누워 덤벨을 <b>이마 옆~머리 뒤</b>로 내린다. 머리 뒤까지 내리면 장두 스트레치가 더 커진다. 팔꿈치는 고정.",
+        safe:"누운 자세라 허리 부담이 거의 없다. 무릎을 세워 요추를 중립으로." },
+      { n:"체스트 딥 머신 (또는 클로즈그립 머신 프레스)", en:"Chest Dip Machine", sets:3, reps:"10–12", rest:90,
+        note:"몸을 세우면 삼두, 앞으로 기울이면 가슴에 더 간다. 여기선 <b>거의 세워서 삼두 위주</b>로." },
+      { n:"프리처 컬 (또는 컨센트레이션 컬)", en:"Preacher / Concentration Curl", pri:true, sets:3, reps:"10–12", rest:75,
+        note:"팔을 <b>몸 앞</b>에 두는 자세라 이두 단두 자극이 강하다. Day 1의 인클라인 컬(장두)과 각도를 나눠 이두 전체를 커버한다. 맨 아래에서 팔을 완전히 펴되 힘은 유지." }
+    ]
+  },
+  {
+    id: "3", color: "var(--d3)", label: "DAY 3", name: "하체 (햄스트링·둔근 + 사두) + 팔 마무리",
+    focus: "허벅지 뒤·전체 + 팔", when: "금요일 권장",
+    ex: [
+      { n:"핵 스쿼트 머신", en:"Hack Squat", pri:true, sets:4, reps:"10–12", rest:180,
+        note:"등판이 몸통을 받쳐주므로 척추 축 부하가 프리 스쿼트보다 훨씬 낮다. 발은 <b>플랫폼 중앙</b>, 어깨너비.",
+        safe:"기구가 없으면 <b>레그 프레스(발 위치 낮게, 무게 90%)</b> 또는 스미스머신 스플릿 스쿼트로 대체. 여기서도 골반이 뜨는 깊이까지는 내려가지 않는다." },
+      { n:"시티드 레그 컬", en:"Seated Leg Curl", pri:true, sets:4, reps:"8–12", rest:120,
+        note:"이번 날은 <b>주 종목</b>이라 4세트. 햄스트링이 두꺼워지면 허벅지 둘레가 직접 늘어난다. 내리는 동작 3초.",
+        safe:"루마니안 데드리프트는 허리 굴곡+부하가 커서 이 프로그램에서 완전히 제외했고, 그 역할을 시티드 레그컬이 대신한다." },
+      { n:"머신 힙 쓰러스트 (또는 덤벨 힙 쓰러스트)", en:"Hip Thrust", sets:3, reps:"10–12", rest:120,
+        note:"맨 위에서 <b>골반을 살짝 말아</b> 1초 정지. 둔근이 강해지면 일상에서 허리가 대신 쓰이는 일이 줄어 디스크에도 도움이 된다.",
+        safe:"등받이(벤치)에 견갑 아래를 대고, 맨 위에서 허리를 과하게 젖히지 않는다. 갈비뼈를 아래로 내린 느낌 유지." },
+      { n:"레그 익스텐션", en:"Leg Extension", pri:true, sets:3, reps:"15–20", rest:90,
+        note:"Day 1보다 <b>고반복</b>으로 대사 스트레스를 노린다. 마지막 세트는 15회 후 10초 쉬고 5회 더(레스트–포즈)." },
+      { n:"인클라인 체스트 서포티드 덤벨 로우", en:"Incline Chest-Supported DB Row", sets:3, reps:"10–12", rest:90,
+        note:"벤치를 30~45도로 세우고 <b>가슴을 대고 엎드려</b> 덤벨을 당긴다. 등 두께 + 이두 보조.",
+        safe:"상체가 벤치에 지지되어 허리 부담이 없는 로우다." },
+      { n:"덤벨 래터럴 레이즈", en:"DB Lateral Raise", sets:3, reps:"12–20", rest:60, opt:true,
+        note:"시간이 부족하면 생략 가능. 어깨는 주간 6~9세트면 충분히 유지·성장한다." },
+      { n:"클로즈그립 덤벨 프레스", en:"Close-Grip DB Press / JM Press", pri:true, sets:3, reps:"8–12", rest:90,
+        note:"덤벨 두 개를 <b>붙여서</b> 가슴 위로. 삼두를 무겁게 자극하면서 가슴 안쪽도 함께 쓴다. 팔꿈치를 몸통 가까이." },
+      { n:"리버스 그립 덤벨 컬", en:"Reverse-Grip DB Curl", pri:true, sets:3, reps:"12–15", rest:75,
+        note:"손등이 위로 오는 그립. <b>상완요골근(전완 윗부분)</b>을 키운다. 팔을 폈을 때 팔뚝 라인이 굵어 보이는 데 직접 기여한다. 무게는 해머 컬의 50~60%면 충분." },
+      { n:"스탠딩 카프 레이즈", en:"Standing Calf Raise", sets:3, reps:"12–15", rest:60, opt:true,
+        note:"기구가 없으면 스미스머신이나 계단에서. 시간이 없으면 생략 가능." }
+    ]
+  }
+];
+
+/* ═══ 상태 저장 ════════════════════════════════════════════════════ */
+const KEY = "gymRoutine.v1";
+const today = () => new Date().toISOString().slice(0, 10);
+let S = { logs: {}, done: {}, theme: null };
+try { S = Object.assign(S, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+/* 날짜가 바뀌면 완료 체크만 자동 초기화 (무게 기록은 유지) */
+P.forEach(d => {
+  const rec = S.done[d.id];
+  if (!rec || rec.date !== today()) S.done[d.id] = { date: today(), set: {} };
+});
+save();
+
+/* 테마 */
+const root = document.documentElement;
+if (S.theme) root.setAttribute("data-theme", S.theme);
+document.getElementById("themeBtn").onclick = () => {
+  const cur = root.getAttribute("data-theme")
+    || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  S.theme = next; save();
+};
+
+/* ═══ 렌더 ═════════════════════════════════════════════════════════ */
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const mmss = s => Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0");
+const tabs = document.getElementById("tabs");
+const panels = document.getElementById("panels");
+
+function volume(d) {
+  return d.ex.reduce((a, e) => a + e.sets, 0);
+}
+
+P.forEach(d => {
+  /* tab */
+  const t = document.createElement("button");
+  t.className = "tab"; t.dataset.day = d.id; t.setAttribute("role", "tab");
+  t.innerHTML = `<b>DAY ${d.id}</b><span>${esc(d.focus)}</span>`;
+  t.onclick = () => show(d.id);
+  tabs.appendChild(t);
+
+  /* panel */
+  const p = document.createElement("section");
+  p.className = "panel"; p.id = "p" + d.id; p.style.setProperty("--rail", d.color);
+
+  let h = `<div class="day-head">
+      <h2 style="color:${d.color}">${esc(d.name)}</h2>
+    </div>
+    <div class="day-meta">
+      <span class="chip">${esc(d.when)}</span>
+      <span class="chip">운동 ${d.ex.length}종목</span>
+      <span class="chip">총 ${volume(d)}세트</span>
+      <span class="chip accent">약 ${55 + Math.round(volume(d) * 0.7)}분</span>
+    </div>`;
+
+  d.ex.forEach((e, i) => {
+    h += `<article class="card${e.opt ? " opt" : ""}" style="--rail:${d.color}">
+      <div class="card-top">
+        <div class="idx">${i + 1}</div>
+        <div class="card-title">
+          <h3>${esc(e.n)}</h3>
+          <span class="en">${esc(e.en)}</span>
+          <div class="tags">
+            ${e.pri ? '<span class="tag pri">우선 · 팔/허벅지</span>' : ""}
+            ${e.opt ? '<span class="tag opt">시간 남으면</span>' : ""}
+          </div>
+        </div>
+        <div class="spec">
+          <div class="rr">${e.sets} × ${esc(e.reps)}</div>
+          <div class="rest">REST ${mmss(e.rest)}</div>
+        </div>
+      </div>
+      <div class="sets">${setRows(d.id, i, e)}</div>
+      <div class="note"><span class="k">수행 포인트</span>${e.note}</div>
+      ${e.safe ? `<div class="note safety"><span class="k">허리 주의</span>${e.safe}</div>` : ""}
+    </article>`;
+  });
+
+  h += `<div class="day-actions">
+      <button class="btn-ghost" data-clear="${d.id}">오늘 체크 초기화</button>
+    </div>`;
+  p.innerHTML = h;
+  panels.appendChild(p);
+});
+
+function setRows(day, ei, e) {
+  let out = "";
+  for (let s = 0; s < e.sets; s++) {
+    const k = `${day}-${ei}-${s}`;
+    const log = S.logs[k] || {};
+    const on = !!(S.done[day] && S.done[day].set[k]);
+    out += `<div class="setrow${on ? " is-done" : ""}" data-k="${k}" data-rest="${e.rest}">
+      <span class="lab">SET ${s + 1}</span>
+      <span class="fld"><input type="number" inputmode="decimal" step="0.5" placeholder="무게"
+        value="${log.w != null ? log.w : ""}" data-f="w" aria-label="세트 ${s + 1} 무게" /><span class="u">kg</span></span>
+      <span class="fld"><input type="number" inputmode="numeric" placeholder="횟수"
+        value="${log.r != null ? log.r : ""}" data-f="r" aria-label="세트 ${s + 1} 횟수" /><span class="u">회</span></span>
+      <button class="chk" aria-pressed="${on}" aria-label="세트 ${s + 1} 완료">✓</button>
+    </div>`;
+  }
+  return out;
+}
+
+/* ═══ 가이드 탭 ════════════════════════════════════════════════════ */
+const gTab = document.createElement("button");
+gTab.className = "tab"; gTab.dataset.day = "g"; gTab.setAttribute("role", "tab");
+gTab.innerHTML = `<b>GUIDE</b><span>원칙 · 근거 · 진행법</span>`;
+gTab.onclick = () => show("g");
+tabs.appendChild(gTab);
+
+const vol = [
+  ["대퇴사두 (허벅지 앞)", 17, "최우선"],
+  ["햄스트링 (허벅지 뒤)", 10, "우선"],
+  ["이두 + 상완근", 13, "최우선"],
+  ["삼두", 13, "최우선"],
+  ["등 (광배·승모)", 10, "유지"],
+  ["가슴", 7, "유지"],
+  ["어깨 측면", 6, "유지"],
+  ["둔근", 6, "보조"],
+  ["종아리", 6, "보조"]
+];
+
+const gp = document.createElement("section");
+gp.className = "panel"; gp.id = "pg";
+gp.innerHTML = `
+<div class="gsec">
+  <h3><span class="n">01</span> 이 프로그램의 설계 원칙</h3>
+  <ul>
+    <li><b>주 3회, 부위별 주 2회 이상 자극.</b> 팔은 3일 모두, 허벅지는 2일(Day 1·3) 들어간다. 같은 주간 볼륨이면 1회로 몰아치는 것보다 나눠 치는 쪽이 근비대에 유리하다.</li>
+    <li><b>우선 부위는 볼륨을 몰아준다.</b> 사두 17세트 / 이두·삼두 각 13세트로 주간 볼륨을 배치하고, 가슴·어깨·등은 6~10세트의 <em>유지</em> 볼륨으로 둔다. 3일 안에서 모든 부위를 똑같이 키우려 하면 우선 부위가 반드시 손해를 본다.</li>
+    <li><b>6~12회 구간을 기본으로 한다.</b> 실패 근처까지 간다면 5~30회 어디서든 비대는 비슷하게 일어나므로, 관절이 편하고 세트당 시간이 적당한 8~12회를 주력으로 쓰고 익스텐션·레이즈 같은 고립 종목만 15~20회로 둔다.</li>
+    <li><b>세트당 강도는 RIR 1~2.</b> "2회 정도 더 할 수 있었다" 지점에서 멈추고, 각 종목의 <em>마지막 세트만</em> 실패 직전(RIR 0~1)까지 간다. 매 세트 실패까지 가면 회복이 안 돼 다음 세트 볼륨이 무너진다.</li>
+    <li><b>휴식은 넉넉하게.</b> 복합 종목 2.5~3분, 고립 1~1.5분. 짧은 휴식은 펌프는 좋지만 다음 세트 수행량이 떨어져 오히려 근비대가 줄어든다.</li>
+    <li><b>늘어난 구간(스트레치)을 놓치지 않는다.</b> 인클라인 컬, 오버헤드 삼두, 시티드 레그컬을 고른 이유가 전부 이것이다. 근육이 길게 늘어난 자세에서 훈련한 쪽이 더 잘 자란다는 결과가 반복해서 나온다.</li>
+  </ul>
+</div>
+
+<div class="gsec">
+  <h3><span class="n">02</span> 주간 볼륨 배분</h3>
+  <p>세트 수는 <b>주간 합계</b>다. 근비대에 필요한 하한은 부위당 약 10세트, 12~20세트 구간에서 추가 이득이 나온다. 20세트를 넘기면 회복이 따라오지 않는 경우가 많다.</p>
+  <div class="scroll-x">
+    <table>
+      <thead><tr><th>부위</th><th>주간 세트</th><th>우선도</th></tr></thead>
+      <tbody>
+        ${vol.map(v => `<tr><td>${v[0]}</td><td class="n">${v[1]}<span class="bar" style="width:${v[1] * 4.5}px"></span></td><td>${v[2]}</td></tr>`).join("")}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="gsec">
+  <h3><span class="n">03</span> 무게를 올리는 방법 — 더블 프로그레션</h3>
+  <p>무게를 언제 올릴지 감으로 정하면 정체된다. 규칙은 하나다.</p>
+  <ul>
+    <li><b>목표 구간의 위쪽 횟수를 모든 세트에서 채우면</b> 다음 주에 무게를 올린다. 예: 8–12회짜리 종목에서 12/12/12/12가 나오면 다음 세션에 상체 2.5kg · 하체 5kg 증량.</li>
+    <li>증량하면 횟수는 다시 아래쪽(8회)으로 떨어진다. 정상이다. 거기서 다시 12회까지 쌓아 올린다.</li>
+    <li>횟수가 목표 하한 아래로 떨어지면 무게를 유지하고 횟수부터 회복시킨다.</li>
+    <li><b>4~6주마다 디로드 1주</b>: 같은 무게로 세트 수를 절반, 실패까지 가지 않는다. 디스크가 있으면 디로드를 빼먹지 않는 게 특히 중요하다.</li>
+  </ul>
+</div>
+
+<div class="gsec">
+  <h3><span class="n">04</span> 허리디스크 — 지켜야 할 선</h3>
+  <ul>
+    <li><b>뺀 것과 이유.</b> 바벨 스쿼트·데드리프트·굿모닝·벤트오버 로우·스탠딩 오버헤드 프레스는 전부 제외했다. 공통점은 <em>몸통이 스스로 부하를 버티면서 척추가 굽거나 젖혀진다</em>는 것이고, 이 조합이 디스크에 실리는 압박·전단력을 가장 크게 만든다.</li>
+    <li><b>대신 쓰는 것.</b> 등·가슴이 지지되는 기구(레그 프레스, 핵 스쿼트, 체스트 서포티드 로우, 시티드 프레스)와 한 다리 종목. 다리에 걸리는 자극은 유지하면서 척추에 걸리는 축 부하만 덜어낸다.</li>
+    <li><b>가동범위의 기준은 "골반이 뜨기 직전".</b> 레그 프레스·핵 스쿼트에서 골반이 말리는 순간 요추가 굴곡되며 압박을 받는다. 깊이보다 이 선을 지키는 게 우선이다.</li>
+    <li><b>기상 직후 1~2시간은 피한다.</b> 자는 동안 디스크에 수분이 차 부피가 커져 있어서, 아침에 굽히는 부하는 같은 무게라도 더 위험하다. 저녁 운동이 유리하다.</li>
+    <li><b>워밍업(매 세션 5~8분).</b> 자전거/일립티컬 5분 → 맥길 빅3(컬업 · 사이드 브릿지 · 버드독) 각 8회 → 첫 종목을 목표 무게의 40%·60%·80%로 램프업 3세트. 척추를 굽혀 늘리는 스트레칭(허리 숙여 발끝 닿기, 무릎 가슴으로 당기기)은 하지 않는다.</li>
+    <li><b>중단 신호.</b> 엉덩이 아래로 내려가는 저림·방사통, 다리 힘 빠짐이 생기면 그 세션은 중단한다. 근육통과 신경 증상은 다르게 다뤄야 한다.</li>
+    <li>디스크 병력이 있다면 이 프로그램을 시작하기 전에 담당 의사나 물리치료사에게 한 번 확인받는 것을 권한다. 이 페이지는 일반적인 트레이닝 가이드이지 진료가 아니다.</li>
+  </ul>
+</div>
+
+<div class="gsec">
+  <h3><span class="n">05</span> 팔 · 허벅지를 실제로 굵게 만드는 포인트</h3>
+  <ul>
+    <li><b>팔뚝 둘레의 2/3는 삼두다.</b> 이두만 파면 둘레가 잘 안 는다. 이 프로그램은 삼두에 이두와 같은 볼륨을 주고, 그중 절반 이상을 <em>팔을 머리 위로 든</em> 오버헤드/스컬크러셔 계열로 채워 장두를 노린다.</li>
+    <li><b>상완근과 상완요골근이 팔 굵기를 만든다.</b> 해머 컬과 리버스 컬이 그 담당이다. 상완근은 이두 밑에 있어서 커지면 이두를 위로 밀어 올린다.</li>
+    <li><b>이두는 각도를 나눈다.</b> Day 1 인클라인 컬(팔이 몸 뒤 = 장두), Day 2 프리처 컬(팔이 몸 앞 = 단두). 한 종목만 반복하는 것보다 낫다.</li>
+    <li><b>허벅지 둘레는 앞뒤를 같이 키워야 한다.</b> 사두만 하면 옆에서 본 두께가 안 는다. 시티드 레그컬을 Day 1·3에 모두 넣어 햄스트링 주 10세트를 확보했다.</li>
+    <li><b>사두는 무거운 것 + 늘어난 것 + 고반복을 섞는다.</b> 레그프레스·핵스쿼트(무거움) → 불가리안(한 다리·긴 가동범위) → 레그 익스텐션(고립·고반복)의 순서가 그 조합이다.</li>
+  </ul>
+</div>
+
+<div class="gsec">
+  <h3><span class="n">06</span> 근거로 삼은 연구</h3>
+  <p>아래는 위 설계에서 직접 참고한 대표 연구다. 세부 수치는 개인차가 크므로 원칙 수준으로 받아들이면 된다.</p>
+  <div class="ref"><b>Schoenfeld 외 (2017), <i>J Sports Sci</i></b> — 주간 세트 수와 근비대의 용량–반응 메타분석. 주당 10세트 이상 구간에서 더 큰 비대. → 볼륨 배분 근거.</div>
+  <div class="ref"><b>Schoenfeld 외 (2021), <i>J Strength Cond Res</i></b> — 고반복·저반복 부하 비교 메타분석. 실패 근처라면 부하 구간과 무관하게 비대는 유사. → 8–12회 주력 설정 근거.</div>
+  <div class="ref"><b>Schoenfeld 외 (2016), <i>J Strength Cond Res</i></b> — 세트 간 휴식 3분 vs 1분. 3분 쪽이 근비대·근력 모두 우수. → 복합 종목 휴식 150–180초.</div>
+  <div class="ref"><b>Maeo 외 (2021), <i>Med Sci Sports Exerc</i></b> — 시티드 레그컬(햄스트링 긴 길이) vs 라잉 레그컬. 시티드 쪽 비대가 유의하게 큼. → 시티드 레그컬 채택.</div>
+  <div class="ref"><b>Maeo 외 (2023), <i>Eur J Sport Sci</i></b> — 삼두 신전 운동의 오버헤드 vs 뉴트럴 팔 위치. 오버헤드 쪽 삼두(특히 장두) 비대가 크게 우수. → 오버헤드 익스텐션을 삼두 주 종목으로.</div>
+  <div class="ref"><b>Pedrosa 외 (2022), <i>Eur J Sport Sci</i></b> — 늘어난 구간의 부분 반복이 전체 가동범위와 동등하거나 더 큰 비대. → 스트레치 강조·파샬 마무리.</div>
+  <div class="ref"><b>Refalo 외 (2023), <i>J Sports Sci</i></b> — 실패까지 훈련 vs 여유를 남긴 훈련. 볼륨이 같다면 실패 직전(RIR 1–2)으로도 충분. → 강도 설정 근거.</div>
+  <div class="ref"><b>McGill, <i>Low Back Disorders</i></b> — 요추 굴곡 + 압박 부하가 디스크 손상의 주요 기전. 몸통 지지 기구 선호, 굴곡 부하 회피, 기상 직후 회피, 빅3 안정화. → 허리 관련 전 항목의 근거.</div>
+</div>
+
+<div class="gsec">
+  <h3><span class="n">07</span> 사용법</h3>
+  <ul>
+    <li>세트마다 <b>무게·횟수를 입력</b>하면 기기에 저장된다. 다음에 열면 지난번 숫자가 그대로 떠 있으니 그걸 기준으로 올리면 된다.</li>
+    <li><b>✓ 버튼</b>을 누르면 그 종목에 지정된 휴식 시간으로 <b>타이머가 자동 시작</b>된다.</li>
+    <li>하단 <b>Rest timer ⇄</b> 글자를 누르면 스톱워치(카운트 업)로 바뀐다.</li>
+    <li>완료 체크는 <b>날짜가 바뀌면 자동으로 초기화</b>되고, 무게 기록은 남는다.</li>
+    <li><b>☀ 화면 켜둠</b>을 켜면 운동 중 화면이 꺼지지 않는다(지원 기기 한정).</li>
+  </ul>
+</div>`;
+panels.appendChild(gp);
+
+/* ═══ 탭 전환 ══════════════════════════════════════════════════════ */
+function show(id) {
+  document.querySelectorAll(".tab").forEach(t =>
+    t.setAttribute("aria-selected", t.dataset.day === id));
+  document.querySelectorAll(".panel").forEach(p =>
+    p.classList.toggle("on", p.id === "p" + id));
+  S.tab = id; save();
+  scrollTo({ top: 0, behavior: "smooth" });
+}
+const wd = new Date().getDay();
+show(S.tab || (wd === 3 || wd === 4 ? "2" : wd === 5 || wd === 6 ? "3" : "1"));
+
+/* ═══ 입력 / 체크 ══════════════════════════════════════════════════ */
+panels.addEventListener("input", ev => {
+  const inp = ev.target.closest("input[data-f]");
+  if (!inp) return;
+  const k = inp.closest(".setrow").dataset.k;
+  S.logs[k] = S.logs[k] || {};
+  S.logs[k][inp.dataset.f] = inp.value === "" ? null : Number(inp.value);
+  save();
+});
+
+panels.addEventListener("click", ev => {
+  const clear = ev.target.closest("[data-clear]");
+  if (clear) {
+    const d = clear.dataset.clear;
+    S.done[d] = { date: today(), set: {} }; save();
+    document.querySelectorAll(`#p${d} .setrow`).forEach(r => {
+      r.classList.remove("is-done");
+      r.querySelector(".chk").setAttribute("aria-pressed", "false");
+    });
+    return;
+  }
+  const btn = ev.target.closest(".chk");
+  if (!btn) return;
+  const row = btn.closest(".setrow");
+  const day = row.dataset.k.split("-")[0];
+  const on = btn.getAttribute("aria-pressed") !== "true";
+  btn.setAttribute("aria-pressed", String(on));
+  row.classList.toggle("is-done", on);
+  S.done[day] = S.done[day] || { date: today(), set: {} };
+  if (on) S.done[day].set[row.dataset.k] = 1; else delete S.done[day].set[row.dataset.k];
+  save();
+  if (on) startRest(Number(row.dataset.rest));
+});
+
+/* ═══ 타이머 ═══════════════════════════════════════════════════════ */
+const elTime = document.getElementById("time");
+const elMode = document.getElementById("modeBtn");
+const elPlay = document.getElementById("play");
+const elProg = document.getElementById("prog");
+const elBar = elProg.querySelector("i");
+
+let mode = "rest";     // "rest" | "watch"
+let target = 120;      // 설정된 휴식 초
+let left = 120;        // 남은 초 (rest) / 경과 초 (watch)
+let running = false;
+let last = 0, raf = 0, beeped = false;
+
+function paint() {
+  const v = mode === "rest" ? Math.max(0, left) : left;
+  elTime.textContent = mmss(v);
+  elTime.classList.toggle("warn", mode === "rest" && v <= 10 && v > 0 && running);
+  elTime.classList.toggle("zero", mode === "rest" && v <= 0);
+  elPlay.textContent = running ? "❚❚" : "▶";
+  if (mode === "rest") {
+    const pct = target > 0 ? Math.max(0, Math.min(1, left / target)) * 100 : 0;
+    elBar.style.width = pct + "%";
+    elProg.classList.toggle("warn", left <= 10);
+  } else {
+    elBar.style.width = (left % 60) / 60 * 100 + "%";
+    elProg.classList.remove("warn");
+  }
+}
+
+function tick(ts) {
+  if (!running) return;
+  if (!last) last = ts;
+  const dt = (ts - last) / 1000; last = ts;
+  if (mode === "rest") {
+    left -= dt;
+    if (left <= 0 && !beeped) { beeped = true; alarm(); }
+    if (left <= -1) { running = false; left = 0; }
+  } else {
+    left += dt;
+  }
+  paint();
+  raf = requestAnimationFrame(tick);
+}
+
+function run(on) {
+  running = on; last = 0;
+  cancelAnimationFrame(raf);
+  if (on) raf = requestAnimationFrame(tick);
+  paint();
+}
+
+function startRest(sec) {
+  mode = "rest"; elMode.textContent = "Rest timer ⇄";
+  target = sec; left = sec; beeped = false;
+  markPreset(sec);
+  run(true);
+  if (navigator.vibrate) navigator.vibrate(12);
+}
+
+function markPreset(sec) {
+  document.querySelectorAll(".pb[data-sec]").forEach(b =>
+    b.dataset.on = Number(b.dataset.sec) === sec ? "1" : "0");
+}
+
+/* 알람: 외부 파일 없이 WebAudio로 생성 */
+let ac = null;
+function alarm() {
+  try {
+    ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+    if (ac.state === "suspended") ac.resume();
+    [0, 0.22, 0.44].forEach((d, i) => {
+      const o = ac.createOscillator(), g = ac.createGain();
+      o.type = "sine";
+      o.frequency.value = i === 2 ? 1046 : 784;
+      g.gain.setValueAtTime(0.0001, ac.currentTime + d);
+      g.gain.exponentialRampToValueAtTime(0.28, ac.currentTime + d + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + d + 0.18);
+      o.connect(g); g.connect(ac.destination);
+      o.start(ac.currentTime + d); o.stop(ac.currentTime + d + 0.2);
+    });
+  } catch (e) {}
+  if (navigator.vibrate) navigator.vibrate([180, 90, 180, 90, 260]);
+}
+
+elPlay.onclick = () => {
+  if (!ac) { try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} }
+  if (mode === "rest" && left <= 0) { left = target; beeped = false; }
+  run(!running);
+};
+document.getElementById("plus").onclick = () => {
+  if (mode === "rest") { left += 15; target = Math.max(target, left); beeped = false; }
+  else left += 15;
+  paint();
+};
+document.getElementById("minus").onclick = () => {
+  left = Math.max(0, left - 15); paint();
+};
+document.getElementById("reset").onclick = () => {
+  left = mode === "rest" ? target : 0; beeped = false; run(false);
+};
+elMode.onclick = () => {
+  if (mode === "rest") { mode = "watch"; elMode.textContent = "Stopwatch ⇄"; left = 0; }
+  else { mode = "rest"; elMode.textContent = "Rest timer ⇄"; left = target; beeped = false; }
+  run(false);
+};
+document.getElementById("presets").addEventListener("click", ev => {
+  const b = ev.target.closest(".pb[data-sec]");
+  if (!b) return;
+  startRest(Number(b.dataset.sec));
+});
+
+/* 화면 꺼짐 방지 */
+let lock = null;
+const wakeBtn = document.getElementById("wakeBtn");
+async function toggleWake() {
+  if (!("wakeLock" in navigator)) { wakeBtn.textContent = "☀ 미지원"; return; }
+  if (lock) { try { await lock.release(); } catch (e) {} lock = null; wakeBtn.dataset.on = "0"; return; }
+  try {
+    lock = await navigator.wakeLock.request("screen");
+    wakeBtn.dataset.on = "1";
+    lock.addEventListener("release", () => { lock = null; wakeBtn.dataset.on = "0"; });
+  } catch (e) { wakeBtn.textContent = "☀ 미지원"; }
+}
+wakeBtn.onclick = toggleWake;
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && wakeBtn.dataset.on === "1" && !lock) toggleWake();
+});
+
+/* 백그라운드에서 돌아왔을 때 시간 보정 */
+let hidAt = 0;
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) { hidAt = Date.now(); }
+  else if (hidAt && running) {
+    const gap = (Date.now() - hidAt) / 1000;
+    if (mode === "rest") { left -= gap; if (left <= 0 && !beeped) { beeped = true; alarm(); } }
+    else left += gap;
+    hidAt = 0; last = 0; paint();
+  }
+});
+
+markPreset(120);
+paint();
+</script>
+
+<footer class="foot">
+  <div class="wrap">
+    기록은 이 브라우저에만 저장됩니다. · 이 페이지는 일반적인 트레이닝 가이드이며 의학적 조언이 아닙니다.
+    허리 증상이 있는 상태에서 시작하기 전에는 의료진의 확인을 받으세요.
+  </div>
+</footer>
+
+<div class="update" id="update" role="status">
+  <span>새 버전이 있습니다</span>
+  <button id="updateBtn">새로고침</button>
+</div>
+
+<script>
+/* ═══ 서비스워커: 오프라인 동작 + 업데이트 알림 ═════════════════════ */
+if ("serviceWorker" in navigator) {
+  addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").then(reg => {
+      /* 이미 제어 중인 워커가 있는데 새 워커가 설치되면 = 업데이트 */
+      reg.addEventListener("updatefound", () => {
+        const sw = reg.installing;
+        if (!sw) return;
+        sw.addEventListener("statechange", () => {
+          if (sw.state === "installed" && navigator.serviceWorker.controller) {
+            const box = document.getElementById("update");
+            box.classList.add("on");
+            document.getElementById("updateBtn").onclick = () => {
+              sw.postMessage("skipWaiting");
+              box.classList.remove("on");
+            };
+          }
+        });
+      });
+      /* 앱을 다시 열 때마다 새 버전 확인 */
+      addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") reg.update();
+      });
+    }).catch(() => {});
+
+    let reloading = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (reloading) return;
+      reloading = true;
+      location.reload();
+    });
+  });
+}
+</script>

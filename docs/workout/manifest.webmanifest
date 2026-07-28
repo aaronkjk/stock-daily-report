@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "근비대 3분할 · 팔/허벅지 집중",
+  "short_name": "근비대 3분할",
+  "description": "허리디스크 안전 설계 · 덤벨/머신 위주 주3회 근비대 루틴. 팔·허벅지 두께 우선, 세트 기록과 휴식 타이머 포함.",
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0E1112",
+  "theme_color": "#171B1C",
+  "categories": ["health", "fitness", "lifestyle"],
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
